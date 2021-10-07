@@ -1,0 +1,32 @@
+﻿header {
+    padding: 156px 0 100px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.navbar-dark .navbar-brand {
+    color: #c47d15;
+    font-size: 1.3em;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #c47d15;
+    font-size: 1.3em;
+}
+
+.logo {
+    margin-right: 10px;
+    border: 1px solid #333;
+    /*border-radius: 50%;
+    height: 100px;*/
+    overflow: hidden;
+    width: 80px;
+    display: inline-grid;
+    background-color: #343A40;
+    border-color: #343A40;
+}
+
+.bg_header {
+    background-color: #0F4C75;
+}

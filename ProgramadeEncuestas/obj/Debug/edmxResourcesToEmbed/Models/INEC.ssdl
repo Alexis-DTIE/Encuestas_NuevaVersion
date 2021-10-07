@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_INECModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DW_ENCUESTAS">
+    <Key>
+      <PropertyRef Name="ID_ENCUESTA" />
+      <PropertyRef Name="ID_IDIOMA" />
+    </Key>
+    <Property Name="ID_ENCUESTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_IDIOMA" Type="int" Nullable="false" />
+    <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+    <Property Name="DESCRIPCION" Type="varchar(max)" />
+    <Property Name="PERIODO" Type="varchar" MaxLength="255" />
+    <Property Name="USUARIO_C" Type="varchar" MaxLength="50" />
+    <Property Name="USUARIO_M" Type="varchar" MaxLength="50" />
+    <Property Name="FECHA_C" Type="datetime" />
+    <Property Name="FECHA_M" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_INEC.dbo.V_WEB_PERSONAL_CAMPO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_WEB_PERSONAL_CAMPO">
+    <Key>
+      <PropertyRef Name="ID_PERSONAL" />
+      <PropertyRef Name="CEDULA" />
+    </Key>
+    <Property Name="ID_PERSONAL" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+    <Property Name="APELLIDO" Type="varchar" MaxLength="255" />
+    <Property Name="CEDULA" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="PROVINCIA" Type="varchar" MaxLength="255" />
+    <Property Name="CARGO" Type="varchar" MaxLength="255" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="255" />
+    <Property Name="ENCUESTA" Type="varchar" MaxLength="255" />
+    <Property Name="TELEFONO1" Type="varchar" MaxLength="255" />
+    <Property Name="TELEFONO2" Type="varchar" MaxLength="255" />
+    <Property Name="FOTO" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <EntityContainer Name="DB_INECModelStoreContainer">
+    <EntitySet Name="DW_ENCUESTAS" EntityType="Self.DW_ENCUESTAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="V_WEB_PERSONAL_CAMPO" EntityType="Self.V_WEB_PERSONAL_CAMPO" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_WEB_PERSONAL_CAMPO].[ID_PERSONAL] AS [ID_PERSONAL], 
+    [V_WEB_PERSONAL_CAMPO].[NOMBRE] AS [NOMBRE], 
+    [V_WEB_PERSONAL_CAMPO].[APELLIDO] AS [APELLIDO], 
+    [V_WEB_PERSONAL_CAMPO].[CEDULA] AS [CEDULA], 
+    [V_WEB_PERSONAL_CAMPO].[PROVINCIA] AS [PROVINCIA], 
+    [V_WEB_PERSONAL_CAMPO].[CARGO] AS [CARGO], 
+    [V_WEB_PERSONAL_CAMPO].[ESTADO] AS [ESTADO], 
+    [V_WEB_PERSONAL_CAMPO].[ENCUESTA] AS [ENCUESTA], 
+    [V_WEB_PERSONAL_CAMPO].[TELEFONO1] AS [TELEFONO1], 
+    [V_WEB_PERSONAL_CAMPO].[TELEFONO2] AS [TELEFONO2], 
+    [V_WEB_PERSONAL_CAMPO].[FOTO] AS [FOTO]
+    FROM [dbo].[V_WEB_PERSONAL_CAMPO] AS [V_WEB_PERSONAL_CAMPO]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

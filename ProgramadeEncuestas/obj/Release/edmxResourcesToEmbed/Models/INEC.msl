@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_INECModelStoreContainer" CdmEntityContainer="DB_INECEntities">
+    <EntitySetMapping Name="DW_ENCUESTAS">
+      <EntityTypeMapping TypeName="DB_INECModel.DW_ENCUESTAS">
+        <MappingFragment StoreEntitySet="DW_ENCUESTAS">
+          <ScalarProperty Name="ID_ENCUESTA" ColumnName="ID_ENCUESTA" />
+          <ScalarProperty Name="ID_IDIOMA" ColumnName="ID_IDIOMA" />
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="USUARIO_C" ColumnName="USUARIO_C" />
+          <ScalarProperty Name="USUARIO_M" ColumnName="USUARIO_M" />
+          <ScalarProperty Name="FECHA_C" ColumnName="FECHA_C" />
+          <ScalarProperty Name="FECHA_M" ColumnName="FECHA_M" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_WEB_PERSONAL_CAMPO">
+      <EntityTypeMapping TypeName="DB_INECModel.V_WEB_PERSONAL_CAMPO">
+        <MappingFragment StoreEntitySet="V_WEB_PERSONAL_CAMPO">
+          <ScalarProperty Name="ID_PERSONAL" ColumnName="ID_PERSONAL" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ENCUESTA" ColumnName="ENCUESTA" />
+          <ScalarProperty Name="TELEFONO1" ColumnName="TELEFONO1" />
+          <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

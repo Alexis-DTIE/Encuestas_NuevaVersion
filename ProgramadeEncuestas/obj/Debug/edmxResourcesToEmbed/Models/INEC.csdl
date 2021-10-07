@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_INECModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DW_ENCUESTAS">
+    <Key>
+      <PropertyRef Name="ID_ENCUESTA" />
+      <PropertyRef Name="ID_IDIOMA" />
+    </Key>
+    <Property Name="ID_ENCUESTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_IDIOMA" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PERIODO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USUARIO_C" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USUARIO_M" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_C" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_M" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="V_WEB_PERSONAL_CAMPO">
+    <Key>
+      <PropertyRef Name="ID_PERSONAL" />
+      <PropertyRef Name="CEDULA" />
+    </Key>
+    <Property Name="ID_PERSONAL" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="APELLIDO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CEDULA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROVINCIA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CARGO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ENCUESTA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FOTO" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DB_INECEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DW_ENCUESTAS" EntityType="Self.DW_ENCUESTAS" />
+    <EntitySet Name="V_WEB_PERSONAL_CAMPO" EntityType="Self.V_WEB_PERSONAL_CAMPO" />
+  </EntityContainer>
+</Schema>

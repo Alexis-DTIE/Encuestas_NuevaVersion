@@ -1,0 +1,72 @@
+﻿<link href="~/Content/verificacion.css" rel="stylesheet" />
+<section id="verificacion" class="verificacion-section ">
+    <img class="verificacion-background" src="~/img/iconos-11.svg" alt="">
+    <div class="container-fluid">
+        <div class="row no-gutters d-flex justify-content-center align-items-center">
+            <div class="col-12 my-lg-5 mt-3">
+                <h1 class="text-center">Personal de campo</h1>
+                <h3 class="text-center">Verificar el personal de campo</h3>
+            </div>
+            <div class="col-12 row no-gutters verificacion-content">
+                <div class="col-lg-6 col-md-12 my-5 d-flex justify-content-center align-items-center">
+                    <div class="d-flex align-content-center flex-column">
+                        <div class="form-group">
+                            <label class="sr-only" for="cedula">Cedula</label>
+                            <input type="text" class="form-control form-control-lg mr-sm-2 text-center" name="cedula" id="cedula"
+                                   placeholder="Número de cédula" required />
+                        </div>
+                        <button type="button" class="btn btn-rosa-censo" id="btnbuscar">Verificar</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+                    <div class="card bg-light h-100 w-100">
+                        <div class="card-body p-2">
+                            <div class="row m-0 z-depth-3">
+                                <div class="col-sm-6 bg-primary rounded-left d-flex justify-content-center align-items-center">
+                                    <img class="img-fluid my-2 img-thumbnail" src="~/Content/Img/portrait_placeholder.png" id="img_campo">
+                                </div>
+                                <div class="col-sm-6 bg-white rounded-right">
+                                    <h3 class="mt-3 text-center text-dark">Información</h3>
+                                    <hr class="bg-primary mt-0 w-25">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="font-weight-bold text-dark text-center">Nombre</p>
+                                            <h6 class="text-muted text-center" id="nombre"></h6>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="font-weight-bold text-dark text-center">Apellido</p>
+                                            <h6 class="text-muted text-center" id="apellido"></h6>
+                                        </div>
+                                    </div>
+                                    <hr class="bg-primary">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="font-weight-bold text-dark text-center">Provincia</p>
+                                            <h6 class="text-muted text-center" id="provincia"></h6>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="font-weight-bold text-dark text-center">Teléfono</p>
+                                            <h6 class="text-muted text-center" id="telefono"></h6>
+                                        </div>
+                                    </div>
+                                    <hr class="bg-primary">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="font-weight-bold text-dark text-center">Encuesta</p>
+                                            <h6 class="text-muted text-center" id="encuesta"></h6>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="font-weight-bold text-dark text-center">Cargo</p>
+                                            <h6 class="text-muted text-center" id="cargo"></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

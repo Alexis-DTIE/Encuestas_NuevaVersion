@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_INECModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DW_ENCUESTAS">
+          <Key>
+            <PropertyRef Name="ID_ENCUESTA" />
+            <PropertyRef Name="ID_IDIOMA" />
+          </Key>
+          <Property Name="ID_ENCUESTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_IDIOMA" Type="int" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+          <Property Name="DESCRIPCION" Type="varchar(max)" />
+          <Property Name="PERIODO" Type="varchar" MaxLength="255" />
+          <Property Name="USUARIO_C" Type="varchar" MaxLength="50" />
+          <Property Name="USUARIO_M" Type="varchar" MaxLength="50" />
+          <Property Name="FECHA_C" Type="datetime" />
+          <Property Name="FECHA_M" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_INEC.dbo.V_WEB_PERSONAL_CAMPO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_WEB_PERSONAL_CAMPO">
+          <Key>
+            <PropertyRef Name="ID_PERSONAL" />
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="ID_PERSONAL" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="255" />
+          <Property Name="APELLIDO" Type="varchar" MaxLength="255" />
+          <Property Name="CEDULA" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PROVINCIA" Type="varchar" MaxLength="255" />
+          <Property Name="CARGO" Type="varchar" MaxLength="255" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="255" />
+          <Property Name="ENCUESTA" Type="varchar" MaxLength="255" />
+          <Property Name="TELEFONO1" Type="varchar" MaxLength="255" />
+          <Property Name="TELEFONO2" Type="varchar" MaxLength="255" />
+          <Property Name="FOTO" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityContainer Name="DB_INECModelStoreContainer">
+          <EntitySet Name="DW_ENCUESTAS" EntityType="Self.DW_ENCUESTAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_WEB_PERSONAL_CAMPO" EntityType="Self.V_WEB_PERSONAL_CAMPO" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_WEB_PERSONAL_CAMPO].[ID_PERSONAL] AS [ID_PERSONAL], 
+    [V_WEB_PERSONAL_CAMPO].[NOMBRE] AS [NOMBRE], 
+    [V_WEB_PERSONAL_CAMPO].[APELLIDO] AS [APELLIDO], 
+    [V_WEB_PERSONAL_CAMPO].[CEDULA] AS [CEDULA], 
+    [V_WEB_PERSONAL_CAMPO].[PROVINCIA] AS [PROVINCIA], 
+    [V_WEB_PERSONAL_CAMPO].[CARGO] AS [CARGO], 
+    [V_WEB_PERSONAL_CAMPO].[ESTADO] AS [ESTADO], 
+    [V_WEB_PERSONAL_CAMPO].[ENCUESTA] AS [ENCUESTA], 
+    [V_WEB_PERSONAL_CAMPO].[TELEFONO1] AS [TELEFONO1], 
+    [V_WEB_PERSONAL_CAMPO].[TELEFONO2] AS [TELEFONO2], 
+    [V_WEB_PERSONAL_CAMPO].[FOTO] AS [FOTO]
+    FROM [dbo].[V_WEB_PERSONAL_CAMPO] AS [V_WEB_PERSONAL_CAMPO]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_INECModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DW_ENCUESTAS">
+          <Key>
+            <PropertyRef Name="ID_ENCUESTA" />
+            <PropertyRef Name="ID_IDIOMA" />
+          </Key>
+          <Property Name="ID_ENCUESTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_IDIOMA" Type="Int32" Nullable="false" />
+          <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PERIODO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO_C" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO_M" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_C" Type="DateTime" Precision="3" />
+          <Property Name="FECHA_M" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="V_WEB_PERSONAL_CAMPO">
+          <Key>
+            <PropertyRef Name="ID_PERSONAL" />
+            <PropertyRef Name="CEDULA" />
+          </Key>
+          <Property Name="ID_PERSONAL" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CEDULA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CARGO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ENCUESTA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DB_INECEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DW_ENCUESTAS" EntityType="Self.DW_ENCUESTAS" />
+          <EntitySet Name="V_WEB_PERSONAL_CAMPO" EntityType="Self.V_WEB_PERSONAL_CAMPO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_INECModelStoreContainer" CdmEntityContainer="DB_INECEntities">
+          <EntitySetMapping Name="DW_ENCUESTAS">
+            <EntityTypeMapping TypeName="DB_INECModel.DW_ENCUESTAS">
+              <MappingFragment StoreEntitySet="DW_ENCUESTAS">
+                <ScalarProperty Name="ID_ENCUESTA" ColumnName="ID_ENCUESTA" />
+                <ScalarProperty Name="ID_IDIOMA" ColumnName="ID_IDIOMA" />
+                <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+                <ScalarProperty Name="USUARIO_C" ColumnName="USUARIO_C" />
+                <ScalarProperty Name="USUARIO_M" ColumnName="USUARIO_M" />
+                <ScalarProperty Name="FECHA_C" ColumnName="FECHA_C" />
+                <ScalarProperty Name="FECHA_M" ColumnName="FECHA_M" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_WEB_PERSONAL_CAMPO">
+            <EntityTypeMapping TypeName="DB_INECModel.V_WEB_PERSONAL_CAMPO">
+              <MappingFragment StoreEntitySet="V_WEB_PERSONAL_CAMPO">
+                <ScalarProperty Name="ID_PERSONAL" ColumnName="ID_PERSONAL" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="CEDULA" ColumnName="CEDULA" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="ENCUESTA" ColumnName="ENCUESTA" />
+                <ScalarProperty Name="TELEFONO1" ColumnName="TELEFONO1" />
+                <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
