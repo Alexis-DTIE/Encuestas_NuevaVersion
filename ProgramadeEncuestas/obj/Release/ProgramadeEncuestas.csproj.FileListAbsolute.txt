@@ -60,7 +60,6 @@ C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\bin\es\System
 C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\bin\es\System.Web.WebPages.resources.dll
 C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\obj\Release\ProgramadeEncuestas.csproj.AssemblyReference.cache
 C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\obj\Release\ProgramadeEncuestas.csproj.CoreCompileInputs.cache
 C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\obj\Release\ProgramadeEncuestas.csproj.CopyComplete
 C:\Users\AFOSSATTI\Desktop\ProgramadeEncuestas\ProgramadeEncuestas\obj\Release\ProgramadeEncuestas.dll
